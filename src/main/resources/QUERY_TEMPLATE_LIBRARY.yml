@@ -1,0 +1,8 @@
+version: 1.0
+templates:
+  GET_CHARACTER_INFO:
+    params: ["name"]
+    cypher: |
+      MATCH (c:Character)
+      WHERE toLower(c.name) CONTAINS toLower($name)
+      RETURN c.name AS name, c.description AS description LIMIT 1;
