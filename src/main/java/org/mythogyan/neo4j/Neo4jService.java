@@ -15,4 +15,5 @@ public class Neo4jService {
     public List<Map<String, Object>> runQuery(String cypher, Map<String, Object> params) {
         return (List<Map<String, Object>>) neo4jClient.query(cypher).bindAll(params).fetch().all();
     }
+
 }
